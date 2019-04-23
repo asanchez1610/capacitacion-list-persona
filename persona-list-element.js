@@ -21,8 +21,7 @@ class PersonaListElement extends PolymerElement {
           display: block;
         }
       </style>
-      <vaadin-grid id="grid" theme="row-dividers" items="[[personas]]" active-item="{{activeItem}}" column-reordering-allowed multi-sort>
-      <vaadin-grid-selection-column auto-select></vaadin-grid-selection-column>
+      <vaadin-grid id="grid" theme="row-stripes" items="[[personas]]" active-item="{{activeItem}}" column-reordering-allowed multi-sort>
       <vaadin-grid-column width = "300px">
         <template class="header">
           <vaadin-grid-sorter path="nombres">Nombre</vaadin-grid-sorter>
