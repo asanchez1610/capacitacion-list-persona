@@ -20,8 +20,13 @@ class PersonaListElement extends PolymerElement {
         :host {
           display: block;
         }
+        vaadin-grid{
+          margin-top: 35px;
+          height: 75vh;
+      }
       </style>
-      <vaadin-grid id="grid" theme="row-stripes" items="[[personas]]" active-item="{{activeItem}}" column-reordering-allowed multi-sort>
+      <vaadin-grid id="grid" theme="row-stripes" items="[[personas]]" >
+ 
       <vaadin-grid-column width = "300px">
         <template class="header">
           <vaadin-grid-sorter path="nombres">Nombre</vaadin-grid-sorter>
@@ -53,6 +58,7 @@ class PersonaListElement extends PolymerElement {
         <template>[[item.fecNacimiento]]</template>
       </vaadin-grid-column>
     </vaadin-grid>
+    
     `;
   }
   static get properties() {
@@ -67,7 +73,7 @@ class PersonaListElement extends PolymerElement {
 
   ready() {
     super.ready();
-    this.$.grid.addEventListener('active-item-changed', function(event) {
+    this.$.grid.addEventListener('active-item-changed', (event)=>{
       let item = event.detail.value;
       this.$.grid.selectedItems = item ? [item] : [];
       this.dispatchEvent(new CustomEvent(
