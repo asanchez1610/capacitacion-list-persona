@@ -68,7 +68,7 @@ class PersonaListElement extends PolymerElement {
 
   ready() {
     super.ready();
-    grid.addEventListener('active-item-changed', function(event) {
+    this.$.grid.addEventListener('active-item-changed', function(event) {
       let item = event.detail.value;
       this.dispatchEvent(new CustomEvent(
         'persona-selected-event',
