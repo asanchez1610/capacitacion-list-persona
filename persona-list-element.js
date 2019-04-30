@@ -39,11 +39,17 @@ class PersonaListElement extends PolymerElement {
         </template>
         <template>[[item.tipoDocumento.codigo]] : [[item.numDocumento]]</template>
       </vaadin-grid-column>
-      <vaadin-grid-column width = "250px">
+      <vaadin-grid-column width = "200px">
         <template class="header">
           <vaadin-grid-sorter path="email">Email</vaadin-grid-sorter>
         </template>
         <template>[[item.email]]</template>
+      </vaadin-grid-column>
+      <vaadin-grid-column width = "350px">
+        <template class="header">
+          <vaadin-grid-sorter path="email">Dirección</vaadin-grid-sorter>
+        </template>
+        <template>[[item.direccion]]</template>
       </vaadin-grid-column>
       <vaadin-grid-column width = "150px">
         <template class="header">
